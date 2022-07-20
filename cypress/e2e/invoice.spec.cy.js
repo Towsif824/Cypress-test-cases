@@ -11,7 +11,7 @@ describe('Invoice Test Suit', ()=>{
       cy.get(':nth-child(1) > .bordarColor > .text-h6').click()
       cy.get('.q-btn--standard > .q-btn__wrapper > .q-btn__content > .block').click()
       cy.wait(3000)
-      const value =invoiceId_alpha_numeric(5)
+      const value =invoiceId_alpha_numeric(6)
       cy.contains('Invoice Number').type(value)
       cy.get('.q-btn--standard > .q-btn__wrapper > .q-btn__content > .block').click()
       cy.wait(5000)
