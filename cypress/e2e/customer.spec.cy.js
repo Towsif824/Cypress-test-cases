@@ -39,5 +39,6 @@ describe('Customer Test Suit', ()=>{
       cy.contains('Name *').type('John Doe') // customer name
       cy.contains('Email').type('doe@gmail.com') // customer email
       cy.get('.q-btn--standard > .q-btn__wrapper > .q-btn__content > .block').click()
+      
     })
   })
