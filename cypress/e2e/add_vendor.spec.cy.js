@@ -1,4 +1,4 @@
-describe('Customer Test Suit', ()=>{
+describe('vendor Test Suit', ()=>{
     it('add vendor 1', function(){
       cy.visit('https://app.test.pennyperfect.ca/auth')
       cy.contains('Email').type('towsif.sandbox@gmail.com')//provide your user's email address
