@@ -27,7 +27,7 @@ describe('Customer Test Suit', ()=>{
       cy.get('.q-btn--standard > .q-btn__wrapper > .q-btn__content > .block').click()
     })
 
-    it('create customer2', function(){
+    it('create customer3', function(){
       cy.visit('https://app.test.pennyperfect.ca/auth')
       cy.contains('Email').type('towsif.sandbox@gmail.com')//provide your user's email address
       cy.contains('Password').type('123456')// provide your user's passowrd
