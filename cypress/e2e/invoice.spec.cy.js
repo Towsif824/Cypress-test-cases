@@ -1,7 +1,7 @@
 describe('Invoice Test Suit', ()=>{
-    it('create invoice without tax', function(){
+    it.only('create invoice without tax', function(){
       cy.visit('https://app.test.pennyperfect.ca/auth')
-      cy.contains('Email').type('ih2.sandbox@gmail.com') //provide your email
+      cy.contains('Email').type('towsif.sandbox@gmail.com') //provide your email
       cy.contains('Password').type('123456') // provide your passowrd
       cy.get('.q-form > .q-card__actions > .q-btn > .q-btn__wrapper > .q-btn__content > .block').click()
       cy.get(':nth-child(3) > .q-expansion-item__container > div.q-item > .q-item__section--main > .q-item__label').click() //selecting accounting menu
@@ -39,7 +39,7 @@ describe('Invoice Test Suit', ()=>{
       cy.get('.q-form > .q-select--single > .q-field__inner > .q-field__control > .q-field__control-container > .q-field__native').click() //selects Income Account field
       cy.contains('Invoice Payment').click() // selecting income account 
       cy.get('.q-btn--standard > .q-btn__wrapper > .q-btn__content > .block').click()
-      
+
       //for summary tab
       cy.wait(2000)
       cy.contains('Summary').click()
@@ -49,7 +49,7 @@ describe('Invoice Test Suit', ()=>{
 
     it('create invoice with tax', function(){
       cy.visit('https://app.test.pennyperfect.ca/auth')
-      cy.contains('Email').type('ih2.sandbox@gmail.com') // provide your email
+      cy.contains('Email').type('towsif.sandbox@gmail.com') // provide your email
       cy.contains('Password').type('123456') // provide your password
       cy.get('.q-form > .q-card__actions > .q-btn > .q-btn__wrapper > .q-btn__content > .block').click()
       cy.get(':nth-child(3) > .q-expansion-item__container > div.q-item > .q-item__section--main > .q-item__label').click() //selecting accounting menu

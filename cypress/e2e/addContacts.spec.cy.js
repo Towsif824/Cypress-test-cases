@@ -13,10 +13,13 @@ describe('vendor Test Suit', ()=>{
       cy.contains('Email').type('will@gmail.com')
       cy.xpath('//div[@placeholder="Select Country"]').click()
       cy.wait(2000)
+
       //cy.xpath("//span[@normalize-space()= 'Andorra']").click()
+      //cy.xpath("//span[normalize-space()='Afghanistan']")
       cy.xpath('//body[1]/div[1]/div[1]/div[2]/main[1]/form[1]/label[5]/div[1]/div[1]/div[1]/div[1]/span[1]').click('center', {force: true})
       //cy.xpath("//span[contains(text(),'Afghanistan')]").click()
       cy.get('.bg-primary > .q-btn__wrapper > .q-btn__content > .block').click()
+      
 
     })
 })
