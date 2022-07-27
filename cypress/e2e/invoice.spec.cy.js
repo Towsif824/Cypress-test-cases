@@ -47,7 +47,7 @@ describe('Invoice Test Suit', ()=>{
     })
 
 
-    it.only('create invoice with tax', function(){
+    it('create invoice with tax', function(){
       cy.visit('https://app.test.pennyperfect.ca/auth')
       cy.contains('Email').type('ih2.sandbox@gmail.com') // provide your email
       cy.contains('Password').type('123456') // provide your password
