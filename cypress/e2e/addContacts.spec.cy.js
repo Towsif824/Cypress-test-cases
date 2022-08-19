@@ -14,9 +14,19 @@ describe('vendor Test Suit', ()=>{
       cy.contains('First Name *').type('Will')
       cy.contains('Last Name').type('Byers')
       cy.contains('Email').type('will@gmail.com')
+
+      cy.contains('Address').type('Ahmed & Kazi Tower, House 57 (Old, 35 সড়ক-২, Dhaka')
       cy.xpath('//div[contains(text(),"Country")]').click({force: true})
       cy.wait(2000)
       cy.xpath('//div[contains(text(),"Bangladesh")]').click()
+      cy.xpath('/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/form[1]/label[6]/div[1]/div[1]/div[1]/input[1]').type('Dhaka')
+      cy.contains('City').type('Dhanmondi')
+      cy.contains('Postal Code').type('1211').should(($postalCode)=>
+      {
+        expect($postalCode).to.have.lengthOf(1)
+      })
+      cy.contains('Work Phone').type('+880416665412').should('have.lengthOf',1)
+      cy.xpath('//span[contains(text(),"Create")]').click()    
 
     })
 })
