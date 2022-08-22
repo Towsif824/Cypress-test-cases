@@ -44,7 +44,7 @@ describe('Customer Test Suit', ()=>{
       cy.xpath('//div[@class="q-item__label"][normalize-space()="Customers"]').click()
       cy.xpath('//i[normalize-space()="add"]').click()
 
-      cy.contains('Name *').type('আনিকা রাবেয়া')
+      cy.contains('Name *').type('Anika Rabea')
       cy.contains('Email *').type('anika@gmail.ca')
       cy.contains('Web').type('www.xbox.com')
       
@@ -75,7 +75,7 @@ describe('Customer Test Suit', ()=>{
       cy.xpath('//div[@class="q-item__label"][normalize-space()="Customers"]').click()
       cy.xpath('//i[normalize-space()="add"]').click()
 
-      cy.contains('Name *').type('আবদুছ রাসেল')
+      cy.contains('Name *').type('Abdul Rasel')
       cy.contains('Email *').type('anika@gmail.ca')
       cy.contains('Web').type('www.xbox.com')
       
