@@ -16,7 +16,7 @@ describe('vendor Test Suit', ()=>{
       cy.contains('Last Name').type('Byers')
       cy.contains('Email').type('will@gmail.com')
 
-      cy.contains('Address').type('Ahmed & Kazi Tower, House 57 (Old, 35 সড়ক-২, Dhaka')
+      cy.contains('Address').type('Ahmed & Kazi Tower, House 57 (Old, 35 road-২, Dhaka')
       cy.xpath('//div[contains(text(),"Country")]').click({force: true})
       cy.wait(2000)
       cy.xpath('//div[contains(text(),"Bangladesh")]').click()

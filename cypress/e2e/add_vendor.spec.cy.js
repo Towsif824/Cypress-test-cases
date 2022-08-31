@@ -9,7 +9,7 @@ describe('vendor Test Suit', ()=>{
 
       cy.xpath('//div[normalize-space()="SETTINGS"]').click() //selecting settings
       cy.xpath('//div[contains(text(),"User Management")]').click() //selecting user management
-      cy.xpath('//div[@class="q-item__label"][normalize-space()="Vendors"]').click()
+      cy.contains('Vendors').click()
       cy.xpath('//i[normalize-space()="add"]').click()
 
       cy.contains('Name *').type('Bella Della')
@@ -32,10 +32,6 @@ describe('vendor Test Suit', ()=>{
 
     it('add vendor 2', function(){
 
-      cy.visit('https://app.test.pennyperfect.ca/auth')
-      cy.contains('Enter your email').type('towsif.sandbox@gmail.com')//provide your user's email address
-      cy.contains('Password').type('123456') //provide your user's passowrd
-      cy.get('.q-form > .q-card__actions > .q-btn > .q-btn__wrapper > .q-btn__content > .block').click()
       cy.wait(1000)
 
       cy.xpath('//div[normalize-space()="SETTINGS"]').click() //selecting settings
