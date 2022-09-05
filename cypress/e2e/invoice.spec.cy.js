@@ -51,7 +51,6 @@ describe('Invoice Test Suit', ()=>{
 
 
     it('create invoice with tax', function(){
-
       cy.wait(2000)
       const value =invoiceId_alpha_numeric(6)
       cy.contains('Invoice Number').type(value)
