@@ -1,5 +1,5 @@
 describe('Customer Test Suit', ()=>{
-    it('create customer', function(){
+    it.only('create customer', function(){
 
       cy.visit('https://app.test.pennyperfect.ca/auth')
       cy.contains('Enter your email').type('towsif.sandbox@gmail.com')//provide your user's email address
@@ -10,6 +10,7 @@ describe('Customer Test Suit', ()=>{
       cy.xpath('//div[normalize-space()="SETTINGS"]').click() //selecting settings
       cy.xpath('//div[contains(text(),"User Management")]').click() //selecting user management
       cy.xpath('//div[@class="q-item__label"][normalize-space()="Customers"]').click()
+      cy.wait(1000)
       cy.xpath('//i[normalize-space()="add"]').click()
 
       cy.contains('Name *').type('Will Byers')

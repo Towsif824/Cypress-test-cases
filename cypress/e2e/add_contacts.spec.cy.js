@@ -9,7 +9,7 @@ describe('vendor Test Suit', ()=>{
       cy.xpath('//div[normalize-space()="SETTINGS"]').click() //selecting settings
       cy.xpath('//div[contains(text(),"User Management")]').click() //selecting user management
       cy.xpath('//div[@class="q-item__label"][normalize-space()="Contacts"]').click()
-      cy.wait(10000)
+      cy.wait(1000)
       cy.xpath('//i[normalize-space()="add"]').click()
          
       cy.contains('First Name *').type('Will')
