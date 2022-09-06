@@ -1,29 +1,60 @@
 describe('vendor Test Suit', ()=>{
     it('add vendor 1', function(){
+
       cy.visit('https://app.test.pennyperfect.ca/auth')
-      cy.contains('Email').type('towsif.sandbox@gmail.com')//provide your user's email address
-      cy.contains('Password').type('123456')// provide your user's passowrd
+      cy.contains('Enter your email').type('towsif.sandbox@gmail.com')//provide your user's email address
+      cy.contains('Password').type('123456') //provide your user's passowrd
       cy.get('.q-form > .q-card__actions > .q-btn > .q-btn__wrapper > .q-btn__content > .block').click()
-      cy.get(':nth-child(17) > :nth-child(1) > :nth-child(1) > .q-item__section--main > .q-item__label').click()//selecting settings
-      cy.get(':nth-child(2) > .q-expansion-item > .q-expansion-item__container > div.q-item > .q-item__section--main > .q-item__label').click()
-      cy.get('[href="/vendors"] > .q-item__section > .q-item__label').click()
-      cy.get('.q-page-sticky > div > .q-btn > .q-btn__wrapper > .q-btn__content > .material-icons').click()
+      cy.wait(1000)
+
+      cy.xpath('//div[normalize-space()="SETTINGS"]').click() //selecting settings
+      cy.xpath('//div[contains(text(),"User Management")]').click() //selecting user management
+      cy.contains('Vendors').click()
+      cy.wait(1000)
+      cy.xpath('//i[normalize-space()="add"]').click()
+
       cy.contains('Name *').type('Bella Della')
-      cy.contains('Email').type('bel@gmail.com')
-      cy.get('.q-btn--standard > .q-btn__wrapper > .q-btn__content > .block').click()
+      cy.contains('Email *').type('bel@gmail.com')
+      
+      cy.contains('Address').type('CWS (C)-10, Bir Uttam A K Khandakar Road, Gulshan-01')
+      cy.xpath('//div[contains(text(),"Country")]').click({force: true})
+      cy.wait(1000)
+      cy.xpath('//div[contains(text(),"Bangladesh")]').click()
+      cy.xpath('/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/form[1]/label[6]/div[1]/div[1]/div[1]/input[1]').type('Dhaka')
+      cy.contains('City').type('Dhaka north')
+
+      cy.contains('Postal Code').type('1212').should(($postalCode)=>
+      {
+        expect($postalCode).to.have.lengthOf(1)
+      })
+      cy.contains('Phone').type('+880196665412').should('have.lengthOf',1)
+      cy.xpath('//span[contains(text(),"Create")]').click()    
     })
 
-    it.only('add vendor 2', function(){
-        cy.visit('https://app.test.pennyperfect.ca/auth')
-        cy.contains('Email').type('towsif.sandbox@gmail.com')//provide your user's email address
-        cy.contains('Password').type('123456')// provide your user's passowrd
-        cy.get('.q-form > .q-card__actions > .q-btn > .q-btn__wrapper > .q-btn__content > .block').click()
-        cy.get(':nth-child(17) > :nth-child(1) > :nth-child(1) > .q-item__section--main > .q-item__label').click()//selecting settings
-        cy.get(':nth-child(2) > .q-expansion-item > .q-expansion-item__container > div.q-item > .q-item__section--main > .q-item__label').click()
-        cy.get('[href="/vendors"] > .q-item__section > .q-item__label').click()
-        cy.get('.q-page-sticky > div > .q-btn > .q-btn__wrapper > .q-btn__content > .material-icons').click()
-        cy.contains('Name *').type('Will Byers')
-        cy.contains('Email').type('will@gmail.com')
-        cy.get('.q-btn--standard > .q-btn__wrapper > .q-btn__content > .block').click()
+    it('add vendor 2', function(){
+
+      cy.wait(1000)
+
+      cy.xpath('//div[normalize-space()="SETTINGS"]').click() //selecting settings
+      cy.xpath('//div[contains(text(),"User Management")]').click() //selecting user management
+      cy.xpath('//div[@class="q-item__label"][normalize-space()="Vendors"]').click()
+      cy.xpath('//i[normalize-space()="add"]').click()
+
+      cy.contains('Name *').type('Sam Wick')
+      cy.contains('Email *').type('sam@gmail.com')
+      
+      cy.contains('Address').type('CWS (C)-10, Bir Uttam A K Khandakar Road, Gulshan-01')
+      cy.xpath('//div[contains(text(),"Country")]').click({force: true})
+      cy.wait(1000)
+      cy.xpath('//div[contains(text(),"Bangladesh")]').click()
+      cy.xpath('/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/form[1]/label[6]/div[1]/div[1]/div[1]/input[1]').type('Dhaka')
+      cy.contains('City').type('Dhaka north')
+
+      cy.contains('Postal Code').type('1212').should(($postalCode)=>
+      {
+        expect($postalCode).to.have.lengthOf(1)
+      })
+      cy.contains('Phone').type('+880196665412').should('have.lengthOf',1)
+      cy.xpath('//span[contains(text(),"Create")]').click()    
       })
 })
