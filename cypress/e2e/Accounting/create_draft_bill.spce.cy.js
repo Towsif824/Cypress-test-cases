@@ -55,7 +55,6 @@ describe('Draft bills test suit', ()=>{
         cy.wait(4000)
         cy.xpath('//div[contains(text(),"Computer - Hardware")]').click()
 
-
         cy.xpath('//span[contains(text(),"Add Item")]').click()
     })
 
