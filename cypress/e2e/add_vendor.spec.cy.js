@@ -37,7 +37,7 @@ describe('vendor Test Suit', ()=>{
 
       cy.xpath('//div[normalize-space()="SETTINGS"]').click() //selecting settings
       cy.xpath('//div[contains(text(),"User Management")]').click() //selecting user management
-      cy.xpath('//div[@class="q-item__label"][normalize-space()="Vendors"]').click()
+      cy.xpath('//div[@class="q-item__label"][normalize-space()="Vendors"]').click({force: true})
       cy.xpath('//i[normalize-space()="add"]').click()
 
       cy.contains('Name *').type('Sam Wick')

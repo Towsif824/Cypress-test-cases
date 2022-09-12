@@ -12,7 +12,7 @@ describe('Create approved invoice', ()=>{
      return text;
   }
     it('create approved invoice tax', function(){
-        cy.visit('https://app.test.pennyperfect.ca/auth')
+      cy.visit(`${Cypress.env('pennyperfect_baseurl')}`)
         cy.contains('Enter your email').type('towsif.sandbox@gmail.com')
         cy.contains('Password').type('123456')
         cy.get('.q-form > .q-card__actions > .q-btn > .q-btn__wrapper > .q-btn__content > .block').click()
@@ -63,7 +63,7 @@ describe('Create approved invoice', ()=>{
       cy.contains('Invoices').click()
       cy.wait(1000)
 
-      cy.xpath('//i[normalize-space()="add"]').click()
+      cy.xpath('//i[normalize-space()="add"]').click({force: true})
       cy.wait(1000)
       cy.xpath('(//i[@role="img"][normalize-space()="add"])[1]').click() //adding customer
       cy.wait(1500)

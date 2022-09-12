@@ -1,5 +1,5 @@
 describe('Customer Test Suit', ()=>{
-    it.only('create customer', function(){
+    it('create customer', function(){
 
       cy.visit(`${Cypress.env('pennyperfect_baseurl')}`)
       cy.contains('Enter your email').type('towsif.sandbox@gmail.com')//provide your user's email address
@@ -39,7 +39,7 @@ describe('Customer Test Suit', ()=>{
 
       cy.xpath('//div[normalize-space()="SETTINGS"]').click() //selecting settings
       cy.xpath('//div[contains(text(),"User Management")]').click() //selecting user management
-      cy.xpath('//div[@class="q-item__label"][normalize-space()="Customers"]').click()
+      cy.xpath('//div[@class="q-item__label"][normalize-space()="Customers"]').click({force: true})
       cy.xpath('//i[normalize-space()="add"]').click()
 
       cy.contains('Name *').type('Anika Rabea')
