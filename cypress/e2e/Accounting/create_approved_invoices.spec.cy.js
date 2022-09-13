@@ -63,7 +63,7 @@ describe('Create approved invoice', ()=>{
       cy.contains('Invoices').click()
       cy.wait(1000)
 
-      cy.xpath('//i[normalize-space()="add"]').click()
+      cy.xpath('//i[normalize-space()="add"]').click({force: true})
       cy.wait(1000)
       cy.xpath('(//i[@role="img"][normalize-space()="add"])[1]').click() //adding customer
       cy.wait(1500)
