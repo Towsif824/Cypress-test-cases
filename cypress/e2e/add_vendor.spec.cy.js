@@ -1,7 +1,7 @@
 describe('vendor Test Suit', ()=>{
     it('add vendor 1', function(){
 
-      cy.visit('https://app.test.pennyperfect.ca/auth')
+      cy.visit(`${Cypress.env('pennyperfect_baseurl')}`)
       cy.contains('Enter your email').type('towsif.sandbox@gmail.com')//provide your user's email address
       cy.contains('Password').type('123456') //provide your user's passowrd
       cy.get('.q-form > .q-card__actions > .q-btn > .q-btn__wrapper > .q-btn__content > .block').click()
