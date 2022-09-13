@@ -35,7 +35,7 @@ describe('Login Test Suit', ()=>{
   })
 
   it('login with invalid creds', function(){
-    cy.visit('https://app.test.pennyperfect.ca/auth')
+    cy.visit(`${Cypress.env('pennyperfect_baseurl')}`)
     cy.contains('Enter your email').type('towsif.sanbox@gmail.com')
     cy.contains('Password').type('145996')
     cy.get('.q-form > .q-card__actions > .q-btn > .q-btn__wrapper > .q-btn__content > .block').click()
