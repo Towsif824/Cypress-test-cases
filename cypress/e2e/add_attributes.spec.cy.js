@@ -11,7 +11,7 @@ describe('attribute suit', ()=>{
         cy.wait(1500)
         cy.xpath('//i[normalize-space()="add"]').click()
         cy.contains('Attribute Name').type('Size')
-        cy.xpath('//div[@aria-label="Attribute is mandatory"]//div[@class="q-checkbox__bg absolute"]//*[name()="svg"]').click()
+        cy.xpath('//div[@aria-label="Attribute is mandatory"]//div[@class="q-checkbox__bg absolute"]//*[name()="svg"]').click({multiple: true})
         cy.xpath('//span[contains(text(),"save")]').click()
 
 

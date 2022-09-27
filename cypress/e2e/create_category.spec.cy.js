@@ -12,14 +12,14 @@ describe('Category Test Suit', ()=>{
 
     it('Create Category', function(){
       cy.wait(1000)
-      cy.xpath('//i[normalize-space()="add"]').click()
+      cy.xpath('//i[normalize-space()="add"]').click({force: true})
       cy.contains('Name').type('Laptop')
       cy.xpath('//span[contains(text(),"save")]').click()
     })
 
     it('Create Category', function(){
       cy.wait(1000)
-      cy.xpath('//i[normalize-space()="add"]').click()
+      cy.xpath('//i[normalize-space()="add"]').click({force: true})
       cy.contains('Name').type('Mobile')
       cy.xpath('//span[contains(text(),"save")]').click()
     })

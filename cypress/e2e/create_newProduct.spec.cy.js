@@ -37,7 +37,7 @@ describe('Product Test Suit', ()=>{
       cy.xpath('//div[normalize-space()="CATALOG"]').click()//selecting CATALOG
       cy.wait(1000)
       cy.xpath('//div[contains(text(),"Categories & Products")]').click({force: true}) //selecting Categoris & products
-      cy.xpath('(//span[@class="text-bold"])[1]').click() // select 1st category of the list
+      cy.xpath('(//span[@class="text-bold"])[1]').click({force: true}) // select 1st category of the list
       cy.xpath('//a[@role="button"]//span[@class="q-btn__wrapper col row q-anchor--skip"]').click( )
       cy.xpath('//i[normalize-space()="inventory"]').click()
 
